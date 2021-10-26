@@ -1,4 +1,4 @@
-# react-boat
+# vue-boat
 
 从零开始搭 vite + vue3 项目
 
