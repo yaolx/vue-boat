@@ -20,7 +20,8 @@
     Make sure to use workspace version of TypeScript to get improved support via
     <a href="https://github.com/znck/vue-developer-experience" target="_blank"
       >@vuedx</a
-    >. Note @vuedx is still experimental and this setup is provided for early feedback.
+    >. Note @vuedx is still experimental and this setup is provided for early
+    feedback.
   </p>
   <button @click="count++">count is: {{ count }}</button>
   <p>
@@ -28,20 +29,18 @@
   </p>
 </template>
 
-<script lang="ts">
+<script setup>
 import { ref, defineComponent } from 'vue'
 
-export default defineComponent({
+defineComponent({
   name: 'HelloWorld',
   props: {
     msg: {
+      default: '学vue3的走起',
       type: String,
       required: true
     }
-  },
-  setup: () => {
-    const count = ref(0)
-    return { count }
   }
 })
+const count = ref(1)
 </script>
