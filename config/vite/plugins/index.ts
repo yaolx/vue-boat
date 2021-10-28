@@ -9,6 +9,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 import eslint from '@rollup/plugin-eslint'
 import typescript from '@rollup/plugin-typescript' */
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import { VITE_APP_ANALYZE, VITE_APP_COMPRESS_GZIP } from '../../constant'
 import configMockPlugin from './mock'
@@ -26,7 +27,8 @@ export function createVitePlugins(viteEnv: string, isBuild: boolean) {
     // typescript(),
     // reactRefresh(),
     // legacy(),
-    vue()
+    vue(),
+    vueJsx()
     // configStyleImportPlugin()
   ]
 

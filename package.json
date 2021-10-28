@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^16.11.6",
     "@vitejs/plugin-vue": "^1.9.4",
+    "@vitejs/plugin-vue-jsx": "^1.2.0",
     "@vue/compiler-sfc": "^3.0.4",
     "@vuedx/typecheck": "^0.3.1-insiders-1606311019.0",
     "@vuedx/typescript-plugin-vue": "^0.3.1-insiders-1606311019.0",

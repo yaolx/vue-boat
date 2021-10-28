@@ -30,17 +30,18 @@
 </template>
 
 <script setup>
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent, defineProps } from 'vue'
+
+defineProps({
+  msg: {
+    default: '学vue3的走起',
+    type: String,
+    required: true
+  }
+})
 
 defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: {
-      default: '学vue3的走起',
-      type: String,
-      required: true
-    }
-  }
+  name: 'HelloWorld'
 })
 const count = ref(1)
 </script>
