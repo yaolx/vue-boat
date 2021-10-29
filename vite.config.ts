@@ -26,14 +26,12 @@ function envInit(mode) {
 }
 export default ({ command, mode }: ConfigEnv) => {
   const isBuild = command === 'build'
-  console.log('###', command, mode, __dirname)
   envInit(mode)
   return {
     plugins: createVitePlugins(mode, isBuild),
     resolve: {
       alias: {
-        '@/': path.resolve(__dirname, './src'),
-        '@/components': path.resolve(__dirname, './src/components')
+        '@': path.resolve(__dirname, 'src')
       }
     },
     // css 配置
