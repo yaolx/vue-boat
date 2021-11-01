@@ -18,6 +18,8 @@ import configVisualizerPlugin from './visualizer'
 
 export function createVitePlugins(viteEnv: string, isBuild: boolean) {
   const vitePlugins: (Plugin | Plugin[])[] = [
+    vue(),
+    vueJsx(),
     {
       ...eslint({
         include: 'src/**/*.+(js|jsx|ts|tsx|vue)'
@@ -26,8 +28,7 @@ export function createVitePlugins(viteEnv: string, isBuild: boolean) {
     },
     typescript(),
     legacy(),
-    vue(),
-    vueJsx()
+    
     // configStyleImportPlugin()
   ]
 
