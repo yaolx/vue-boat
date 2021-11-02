@@ -2,6 +2,7 @@
   "name": "vue-boat",
   "version": "0.0.0",
   "scripts": {
+    "dev": "vite -m test",
     "serve": "vite preview",
     "start:mock": "vite -m mock",
     "start:test": "vite -m test",
@@ -13,13 +14,18 @@
     "lint:tsc": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "ant-design-vue": "^2.2.8",
+    "axios": "^0.24.0",
+    "lodash": "^4.17.21",
     "mockjs": "^1.1.0",
     "vue": "^3.0.4",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.1",
     "@rollup/plugin-typescript": "^8.3.0",
+    "@types/lodash": "^4.14.175",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
