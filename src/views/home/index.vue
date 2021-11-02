@@ -16,10 +16,14 @@
   <button @click="count++">
     count is: {{ count }}
   </button>
+  <a-button type="primary" @click="onHandler">
+    请求数据
+  </a-button>
   <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
 </template>
 
 <script setup lang="ts">
+import request from '@/config/request'
 import { ref, defineComponent } from 'vue'
 
 defineProps({
@@ -29,7 +33,19 @@ defineProps({
     required: true
   }
 })
-
+const onHandler = () => {
+    request(
+      {
+        url: '/api/user',
+        method: 'get'
+      },
+      {
+        loading: true
+      }
+    ).then((data) => {
+      console.log('EEEE', data)
+    })
+  }
 defineComponent({
   name: 'HelloWorld'
 })
