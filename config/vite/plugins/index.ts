@@ -7,14 +7,14 @@ import { Plugin } from 'vite'
 import legacy from '@vitejs/plugin-legacy'
 import viteCompression from 'vite-plugin-compression'
 import eslint from '@rollup/plugin-eslint'
-import typescript from '@rollup/plugin-typescript' 
+import typescript from '@rollup/plugin-typescript'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import ViteComponents, { AntDesignVueResolver } from 'vite-plugin-components'
 
 import { VITE_APP_ANALYZE, VITE_APP_COMPRESS_GZIP } from '../../constant'
 import configMockPlugin from './mock'
 import configVisualizerPlugin from './visualizer'
-// import configStyleImportPlugin from './styleImport'
 
 export function createVitePlugins(viteEnv: string, isBuild: boolean) {
   const vitePlugins: (Plugin | Plugin[])[] = [
@@ -28,8 +28,9 @@ export function createVitePlugins(viteEnv: string, isBuild: boolean) {
     },
     typescript(),
     legacy(),
-    
-    // configStyleImportPlugin()
+    ViteComponents({
+      customComponentResolvers: [AntDesignVueResolver()]
+    })
   ]
 
   // mock下开启
@@ -40,9 +41,7 @@ export function createVitePlugins(viteEnv: string, isBuild: boolean) {
 
   // 发布，打包
   if (VITE_APP_COMPRESS_GZIP && isBuild) {
-    vitePlugins.push(
-      viteCompression({ deleteOriginFile: true })
-    )
+    vitePlugins.push(viteCompression({ deleteOriginFile: true }))
   }
 
   return vitePlugins

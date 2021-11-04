@@ -4,9 +4,12 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "allowJs": true,
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    // 跳过对第三方包的检查
+    "skipLibCheck": true,
     "lib": ["esnext", "dom"],
     "paths": {
       "@/*": ["src/*"]

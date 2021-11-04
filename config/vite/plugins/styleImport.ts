@@ -8,10 +8,10 @@ export default function configStyleImportPlugin() {
   return styleImport({
     libs: [
       {
-        libraryName: 'antd',
+        libraryName: 'antd-design-vue',
         esModule: true,
         resolveStyle: (name) => {
-          return `antd/es/${name}/style/index`
+          return `antd-design-vue/es/${name}/style/index`
         }
       }
     ]
