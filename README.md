@@ -16,6 +16,8 @@ yarn create vite
 
 ## 配置目录
 
+![image](https://user-images.githubusercontent.com/7429874/140527361-d1e12f4e-6e56-429a-9017-40da70e5e317.png)
+
 ## 别名配置
 
 建议用`@/`开头，避免与业界某些 npm 包冲突
