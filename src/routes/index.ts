@@ -1,6 +1,6 @@
 import Home from '@/views/home/index.vue'
 import Error from '@/views/error/404.vue'
-import {createRouter, createWebHashHistory} from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 const routesConfig = [
   {
     path: '/',
@@ -18,7 +18,7 @@ const routerHistory = createWebHashHistory()
 
 const routers = createRouter({
   history: routerHistory,
-  routes: routesConfig,
+  routes: routesConfig
 })
 
 export default routers

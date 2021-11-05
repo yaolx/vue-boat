@@ -19,15 +19,19 @@ import configVisualizerPlugin from './visualizer'
 export function createVitePlugins(viteEnv: string, isBuild: boolean) {
   const vitePlugins: (Plugin | Plugin[])[] = [
     vue(),
+    // 支持jsx
     vueJsx(),
+    // es检测
     {
       ...eslint({
         include: 'src/**/*.+(js|jsx|ts|tsx|vue)'
       }),
       enforce: 'pre'
     },
+    // ts检测
     typescript(),
     legacy(),
+    // 按需加载组件
     ViteComponents({
       customComponentResolvers: [AntDesignVueResolver()]
     })
